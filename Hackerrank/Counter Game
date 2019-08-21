@@ -1,0 +1,47 @@
+
+from math import log2
+
+
+t = int(input())
+
+l = []
+for i in range(65):
+    l.append(2**i)
+l.reverse()
+
+for i in range(t):
+
+    n = int(input())
+    if n in l:
+        z = log2(n)
+        if z%2 == 0:
+            print('Richard')
+        else:
+            print('Louise')
+    else:
+        k = 0
+        while n not in l:
+
+            for i in l:
+                if i<n:
+                    n = n-i
+                    k+=1
+                    break
+        
+        z = log2(n)
+        if k%2 == 0:
+            if z%2 == 0:
+              print('Richard')
+            else:
+              print('Louise')
+        else:
+
+            if z%2 == 0:
+              print('Louise')
+            else:
+              print('Richard')
+
+
+
+
+
