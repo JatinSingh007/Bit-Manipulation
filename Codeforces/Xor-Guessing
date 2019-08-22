@@ -1,0 +1,29 @@
+l1 = list(range(1,101))
+ 
+print("?",*l1,flush=True)
+k = 2
+ 
+z1=int(input())
+ 
+l2 =[a<<7 for a in l1]
+ 
+ 
+ 
+print("?",*l2,flush=True)
+z2 = int(input())
+ 
+ba = []
+ 
+ 
+for i in l1:
+    for j in l2:
+        if i^j == z1^z2:
+            ba.append((i,j))
+ 
+ 
+for i in ba:
+    a,b = i
+    if a^z1 == b^z2:
+        print('!',a^z1)
+        break
+ 
