@@ -1,0 +1,28 @@
+
+t = int(input())
+
+l = []
+m = 10**9 + 7
+
+for _ in range(t):
+
+    n = int(input())
+    l = list(map(int,input().split()))
+    count = 0
+    xor = 1
+    ba = []
+    for i in l:
+        xor|=i
+        count+=bin(i)[2:].count('1')
+    if n == 1:
+        print(l[0])
+        continue
+    elif set(l) == {0}:
+        print(0)
+        continue
+    
+    print((xor%m*pow(2,n-1,m)%m)%m)
+
+
+
+
