@@ -1,0 +1,32 @@
+
+
+from collections import defaultdict
+
+hash = defaultdict(set)
+
+n = int(input())
+la = []
+for i in range(n):
+    z = input()
+    la.append(z)
+    s = sorted(set(list(z)))
+
+    s = ''.join(s)
+    hash[s].add(i)
+k = list(hash.keys())
+ans = 0
+
+# print(k)
+# print(hash)
+for i in range(len(k)):
+    for j in range(i+1,len(k)):
+
+        if len(set(k[i]+k[j])) == 10:
+
+            ans+=len(hash[k[i]])*len(hash[k[j]])
+
+y = len(hash['0123456789'])
+ans+=(y*(y-1))//2
+
+
+print(ans)
